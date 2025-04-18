@@ -1,0 +1,74 @@
+<%- include("navbar.ejs") %>
+ <form action="/admin/save_education" method="post">
+
+ <div class="container bg-dark text-white p-4">
+    <h1>Education Details</h1>
+    <div class="row">
+        <div class="col-md-3">
+            Qualification
+            <input type="text" name="qualification"
+             class="form-control">
+        </div>
+
+        <div class="col-md-3">
+            University
+            <input type="text" name="university"
+             class="form-control">
+        </div>
+
+        <div class="col-md-3">
+            Passing Year
+            <input type="number" name="passing_year"
+             class="form-control">
+        </div>
+
+        <div class="col-md-2">
+            Percentage
+            <input type="number" name="percentage"
+             class="form-control">
+        </div>
+        <div class="col-md-1"><br>
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</div>
+</form>
+
+
+
+<div class="container bg-dark text-white p-4">
+    <h1>Education Details</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table_bordered table-sm table-dark">
+                <tr>
+                    <th>Action</th>
+                    <th>SrNo</th>
+                    <th>Qualification</th>
+                    <th>University</th>
+                    <th>Passing Year</th>
+                    <th>Percentage</th>
+                </tr>
+                <% list.map((row,i)=>{ %>
+                <tr>
+                    <td></td>
+                    <td><%-i+1%></td>
+                    <td><%-row.qualification_name%></td>
+                    <td><%-row.university%></td>
+                    <td><%-row.passing_year%></td>
+                    <td><%-row.percentage%></td>
+
+                    
+
+
+                </tr>
+            <% }) %>
+            </table>
+        </div>
+        </div>
+   </div>
+
+
+
+<%- include("footer.ejs") %>
+

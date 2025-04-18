@@ -1,0 +1,63 @@
+<%- include("navbar.ejs") %>
+<div class="container" >
+
+</div>
+<form action="/admin/save_project" method="post"
+ enctype="multipart/form-data">
+
+    <div class="container bg-dark text-white p-4">
+       <h1> Add New project</h1>
+       <div class="row">
+           <div class="col-md-5">
+              project Image
+               <input type="file" name="project_image"
+                class="form-control">
+           </div>
+
+           <div class="col-md-5">
+           project Title
+            <input type="text" name="project_title"
+             class="form-control">
+        </div>
+
+
+        <div class="col-md-2"><br>
+            <button class="btn btn-primary">Save project</button>
+        </div>
+
+           
+           </div>
+           </div>
+           </form>
+
+
+
+           <div class="container bg-dark text-white p-4">
+            <h1>project List</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table_bordered table-sm table-dark">
+                        <tr>
+                            <th></th>
+                            <th>SrNo</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                        </tr>
+                        <% projects.map((row,i)=>{ %>
+                            <tr>
+                                <td></td>
+                                <td><%-i+1%></td>
+                                <td>
+                                    <img src="/<%- row.project_image %>" width="100px">
+                                </td>
+                                <td><%- row.project_title %></td>
+
+                            </tr>
+
+                        <% }) %>
+                        </table>
+                        </div>
+                        </div>
+                        </div> 
+
+<%- include("footer.ejs") %>
